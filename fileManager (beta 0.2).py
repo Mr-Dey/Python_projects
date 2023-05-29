@@ -14,6 +14,10 @@ def logic(dir):
     word = ['.doc', '.docx', '.docm', '.dot', '.dotx', '.dotm']
     excel = ['.xls', '.xlsx', '.xlsm', '.xlsb', '.xltx', '.xltm']
     program = ['.exe', '.msi', '.com', '.bat', '.cmd', '.scr', '.cpl', '.hta']
+    text = [".txt", ".csv", ".tsv", ".log", ".json", ".xml", ".html", ".htm", ".md", ".py", ".cpp", ".java", ".c", ".h",
+            ".php", ".rb", ".pl", ".sql", ".css", ".js", ".yaml", ".ini", ".cfg", ".bat", ".sh", ".tex", ".rtf", ".doc", ".docx"]
+    ppt = [".ppt",".pptx",".pps",".ppsx",".pot",".potx",".odp"]
+
 
     fileDict = {x: f"photos" for x in photos}
     fileDict.update({x: f"videos" for x in videos})
@@ -22,6 +26,8 @@ def logic(dir):
     fileDict.update({x: f"word" for x in word})
     fileDict.update({x: f"program" for x in program})
     fileDict.update({x: f"excel" for x in excel})
+    fileDict.update({x: f"text" for x in text})
+    fileDict.update({x: f"ppt" for x in ppt})
 
     for z in os.listdir(dir):
         name, ext = os.path.splitext(z)
