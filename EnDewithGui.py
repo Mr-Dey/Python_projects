@@ -28,8 +28,8 @@ def Encrypt():
         with open(f"{path}/txt.key", "wb") as txt:
             txt.write(key)
             txt.close()
+        os.system(f"attrib +h {path}/txt.key")
         files = list(x for x in os.listdir(path) if x!="txt.key" and os.path.isfile(path+"\\"+x))
-        print(files)
         
         #Logic
         for file in files:
@@ -65,7 +65,6 @@ def Decrypt():
             return 0
         
         files=list(x for x in os.listdir(path) if  x!="txt.key" and os.path.isfile(path+"\\"+x))
-        print(files)
         with open(f"{path}/txt.key","rb") as TheKey:
             key=TheKey.read()
             TheKey.close()
